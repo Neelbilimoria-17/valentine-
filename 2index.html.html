@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Be My Valentine 💘</title>
+  <style>
+    body {
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .box {
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      text-align: center;
+      width: 320px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    }
+
+    h2 {
+      margin-bottom: 20px;
+    }
+
+    .buttons {
+      position: relative;
+      height: 60px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      position: absolute;
+    }
+
+    #yes {
+      left: 40px;
+      background-color: #ff4d6d;
+      color: white;
+    }
+
+    #no {
+      right: 40px;
+      background-color: #ccc;
+    }
+
+    #gif {
+      display: none;
+      margin-top: 20px;
+    }
+
+    #gif img {
+      width: 200px;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="box">
+    <h2>Will you be my Valentine? 💖</h2>
+
+    <div class="buttons" id="buttons">
+      <button id="yes" onclick="sayYes()">Yes</button>
+      <button id="no" onclick="moveNo()">No</button>
+    </div>
+
+    <!-- GIF appears right below the question -->
+    <div id="gif">
+      <img src="oh-wow-you-dont-say.gif" alt="Wow GIF">
+    </div>
+  </div>
+
+  <script>
+    function moveNo() {
+      const noBtn = document.getElementById("no");
+
+      // FAST, INSTANT jump
+      const maxX = 220;
+      const maxY = 60;
+
+      noBtn.style.left = Math.random() * maxX + "px";
+      noBtn.style.top = Math.random() * maxY + "px";
+    }
+
+    function sayYes() {
+      document.getElementById("buttons").style.display = "none";
+      document.getElementById("gif").style.display = "block";
+    }
+  </script>
+
+</body>
+</html>
